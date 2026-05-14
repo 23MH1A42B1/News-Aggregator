@@ -70,8 +70,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     return (
       <>
         <Navigation />
-        <main className="max-w-4xl mx-auto px-4 py-8">
-          <p>Loading article...</p>
+        <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="muted-panel">
+            <p className="text-xl font-black text-slate-800">Loading article...</p>
+          </div>
         </main>
         <Footer />
       </>
@@ -82,11 +84,13 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     return (
       <>
         <Navigation />
-        <main className="max-w-4xl mx-auto px-4 py-8">
-          <p className="text-xl text-gray-600">Article not found.</p>
-          <Link href="/" className="text-blue-600 hover:underline">
+        <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="muted-panel">
+          <p className="text-xl font-black text-slate-800">Article not found</p>
+          <Link href="/" className="mt-4 inline-flex rounded-md bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700">
             Back to home
           </Link>
+          </div>
         </main>
         <Footer />
       </>
@@ -96,13 +100,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       <Navigation />
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        <Link href="/" className="text-blue-600 hover:underline mb-4 inline-block">
+      <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="mb-5 inline-flex rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-bold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+        >
           Back to articles
         </Link>
 
         {article.urlToImage && (
-          <div className="relative w-full h-96 mb-8 rounded-lg overflow-hidden">
+          <div className="relative mb-8 h-72 w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-200 shadow-sm sm:h-96">
             <Image
               src={article.urlToImage}
               alt={article.title}
@@ -112,9 +119,11 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           </div>
         )}
 
-        <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
+        <h1 className="mb-4 text-3xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
+          {article.title}
+        </h1>
 
-        <div className="flex items-center gap-4 mb-6 text-gray-600">
+        <div className="mb-6 flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500">
           <span>{article.source.name}</span>
           <span>-</span>
           <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
@@ -126,14 +135,14 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           )}
         </div>
 
-        <div className="flex gap-2 mb-8">
+        <div className="mb-8 flex flex-col gap-2 sm:flex-row">
           <button
             data-testid="bookmark-button"
             onClick={handleBookmark}
-            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+            className={`rounded-md px-4 py-2.5 text-sm font-bold shadow-sm transition ${
               isBookmarked
-                ? 'bg-yellow-500 text-white hover:bg-yellow-600'
-                : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                ? 'bg-amber-400 text-slate-950 hover:bg-amber-300'
+                : 'border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
             }`}
           >
             {isBookmarked ? 'Saved' : 'Bookmark'}
@@ -149,19 +158,21 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             href={article.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors"
+            className="rounded-md bg-blue-600 px-4 py-2.5 text-center text-sm font-bold text-white shadow-sm transition hover:bg-blue-700"
           >
             Read Full Article
           </a>
         </div>
 
-        <article className="prose max-w-none">
+        <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
           {article.description && (
-            <p className="text-lg text-gray-700 mb-4">{article.description}</p>
+            <p className="mb-5 text-lg font-semibold leading-8 text-slate-700">
+              {article.description}
+            </p>
           )}
 
           {article.content && (
-            <div className="text-gray-700 leading-relaxed">
+            <div className="leading-8 text-slate-600">
               {article.content}
             </div>
           )}

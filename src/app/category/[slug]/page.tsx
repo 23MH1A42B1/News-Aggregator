@@ -51,19 +51,29 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-2">{categoryName}</h1>
-        <p className="text-gray-600 mb-8">Articles in {categoryName}</p>
+      <main className="page-shell">
+        <header className="page-header">
+          <div>
+            <p className="eyebrow">Category</p>
+            <h1 className="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+              {categoryName}
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Articles in {categoryName}
+            </p>
+          </div>
+        </header>
 
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-8">
+          <div className="status-banner border-red-200 bg-red-50 text-red-700">
             {error}
           </div>
         )}
 
         {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-600">Loading articles...</p>
+          <div className="muted-panel">
+            <p className="text-xl font-black text-slate-800">Loading articles...</p>
+            <p className="mt-2 text-slate-500">Checking the latest category feed.</p>
           </div>
         ) : (
           <ArticleGrid articles={articles} />

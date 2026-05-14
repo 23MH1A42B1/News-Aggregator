@@ -53,43 +53,45 @@ export default function ArticleCard({
   };
 
   return (
-    <article className="card overflow-hidden flex flex-col h-full">
+    <article className="card flex h-full flex-col">
       {article.urlToImage && (
-        <div className="relative w-full h-48 bg-gray-200">
+        <div className="relative h-48 w-full overflow-hidden bg-slate-200">
           <LazyArticleImage
             src={article.urlToImage}
             alt={article.title}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition duration-500 hover:scale-105"
           />
         </div>
       )}
 
-      <div className="p-4 flex-1 flex flex-col">
-        <h3 className="text-lg font-bold mb-2 line-clamp-2 hover:text-accent">
+      <div className="flex flex-1 flex-col p-5">
+        <p className="mb-3 flex items-center justify-between gap-3 text-xs font-semibold uppercase text-slate-500">
+          <span className="truncate">{article.source.name}</span>
+          <span className="shrink-0">
+            {new Date(article.publishedAt).toLocaleDateString()}
+          </span>
+        </p>
+
+        <h3 className="mb-3 line-clamp-2 text-xl font-black leading-snug text-slate-950 transition hover:text-blue-700">
           <InternalArticleLink article={article}>
             {article.title}
           </InternalArticleLink>
         </h3>
 
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="mb-5 line-clamp-3 text-sm leading-6 text-slate-600">
           {article.description}
         </p>
 
         <div className="mt-auto">
-          <p className="text-xs text-gray-500 mb-2">
-            <span>{article.source.name}</span> -{' '}
-            {new Date(article.publishedAt).toLocaleDateString()}
-          </p>
-
-          <div className="flex gap-2">
+          <div className="grid grid-cols-2 gap-2">
             <button
               data-testid="bookmark-button"
               onClick={handleBookmark}
               disabled={isLoading}
-              className={`flex-1 py-2 rounded-lg font-medium transition-colors ${
+              className={`rounded-md px-3 py-2.5 text-sm font-bold transition ${
                 isBookmarked
-                  ? 'bg-yellow-500 text-white hover:bg-yellow-600'
-                  : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                  ? 'bg-amber-400 text-slate-950 hover:bg-amber-300'
+                  : 'border border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
               }`}
             >
               {isBookmarked ? 'Saved' : 'Bookmark'}
@@ -97,7 +99,7 @@ export default function ArticleCard({
 
             <InternalArticleLink
               article={article}
-              className="flex-1 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center font-medium transition-colors inline-block"
+              className="rounded-md bg-blue-600 px-3 py-2.5 text-center text-sm font-bold text-white transition hover:bg-blue-700"
             >
               Read
             </InternalArticleLink>

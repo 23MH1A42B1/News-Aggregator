@@ -16,36 +16,44 @@ export default function Navigation() {
   const isOnline = useOnlineStatus();
 
   return (
-    <nav className="bg-primary text-white sticky top-0 z-50 shadow-lg">
-      <div className="max-w-6xl mx-auto px-4 py-4">
-        <div className="flex items-center justify-between mb-4">
-          <Link href="/" className="text-2xl font-bold">
-            News PWA
+    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
+      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
+          <Link href="/" className="flex items-center gap-3 text-slate-950">
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950 text-sm font-black text-white">
+              NP
+            </span>
+            <span>
+              <span className="block text-lg font-black leading-5">News PWA</span>
+              <span className="hidden text-xs font-medium text-slate-500 sm:block">
+                Offline-first headlines
+              </span>
+            </span>
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700">
             <div
               aria-hidden="true"
-              className={`w-3 h-3 rounded-full ${
+              className={`h-2.5 w-2.5 rounded-full ${
                 isOnline ? 'bg-green-500' : 'bg-red-500'
               }`}
             />
-            <span className="text-sm">{isOnline ? 'Online' : 'Offline'}</span>
+            <span>{isOnline ? 'Online' : 'Offline'}</span>
           </div>
         </div>
 
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="mt-4 flex gap-2 overflow-x-auto pb-1">
           {categories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/category/${cat.slug}`}
-              className="px-4 py-2 bg-secondary rounded-lg hover:bg-accent transition-colors whitespace-nowrap"
+              className="whitespace-nowrap rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
             >
               {cat.name}
             </Link>
           ))}
           <Link
             href="/bookmarks"
-            className="px-4 py-2 bg-secondary rounded-lg hover:bg-accent transition-colors whitespace-nowrap font-bold"
+            className="whitespace-nowrap rounded-md bg-slate-950 px-3 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
           >
             Bookmarks
           </Link>

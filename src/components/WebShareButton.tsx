@@ -35,7 +35,7 @@ export default function WebShareButton({ title, text, url }: WebShareButtonProps
     <button
       data-testid="web-share-button"
       onClick={handleShare}
-      className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-medium"
+      className="rounded-md border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
     >
       Share
     </button>

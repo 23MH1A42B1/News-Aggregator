@@ -29,13 +29,13 @@ export default function PushNotificationToggle() {
       data-testid="subscribe-push-button"
       onClick={handleToggle}
       disabled={isLoading}
-      className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+      className={`w-full rounded-md px-4 py-2.5 text-sm font-bold shadow-sm transition sm:w-auto ${
         isPushSubscribed
-          ? 'bg-red-500 text-white hover:bg-red-600'
-          : 'bg-green-500 text-white hover:bg-green-600'
+          ? 'border border-red-200 bg-red-50 text-red-700 hover:bg-red-100'
+          : 'bg-blue-600 text-white hover:bg-blue-700'
       }`}
     >
-      {isLoading ? '...' : isPushSubscribed ? 'Unsubscribe' : 'Subscribe'}
+      {isLoading ? 'Working...' : isPushSubscribed ? 'Unsubscribe' : 'Subscribe'}
     </button>
   );
 }

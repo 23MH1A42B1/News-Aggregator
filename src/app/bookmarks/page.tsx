@@ -29,20 +29,28 @@ export default function BookmarksPage() {
   return (
     <>
       <Navigation />
-      <main className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-2">Bookmarks</h1>
-        <p className="text-gray-600 mb-8">
-          Your saved articles ({bookmarks.length})
-        </p>
+      <main className="page-shell">
+        <header className="page-header">
+          <div>
+            <p className="eyebrow">Offline library</p>
+            <h1 className="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+              Bookmarks
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              Your saved articles ({bookmarks.length})
+            </p>
+          </div>
+        </header>
 
         {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-600">Loading bookmarks...</p>
+          <div className="muted-panel">
+            <p className="text-xl font-black text-slate-800">Loading bookmarks...</p>
+            <p className="mt-2 text-slate-500">Reading from IndexedDB.</p>
           </div>
         ) : bookmarks.length === 0 ? (
-          <div className="text-center py-12 bg-gray-50 rounded-lg">
-            <p className="text-xl text-gray-600">No bookmarks yet.</p>
-            <p className="text-gray-500">
+          <div className="muted-panel">
+            <p className="text-xl font-black text-slate-800">No bookmarks yet</p>
+            <p className="mt-2 text-slate-500">
               Start bookmarking articles to see them here.
             </p>
           </div>
