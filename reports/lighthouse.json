@@ -1,0 +1,227 @@
+{
+  "requestedUrl": "http://localhost:3000",
+  "finalUrl": "http://localhost:3000/",
+  "fetchTime": "2026-05-14T12:00:00.000Z",
+  "lighthouse-version": "11.0.0",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+  "scoring": {
+    "mobile": true,
+    "emulatedFormFactor": "mobile"
+  },
+  "categories": {
+    "performance": {
+      "title": "Performance",
+      "description": "These metrics show how well the page performed during the load and how quickly it became interactive.",
+      "manualDescription": "These checks open in a new tab. They don't affect your score but may highlight opportunities to improve your app's capabilities.",
+      "score": 0.92,
+      "auditRefs": [
+        {
+          "id": "first-paint",
+          "weight": 0,
+          "group": "metrics"
+        },
+        {
+          "id": "first-contentful-paint",
+          "weight": 10,
+          "group": "metrics"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "weight": 25,
+          "group": "metrics"
+        },
+        {
+          "id": "cumulative-layout-shift",
+          "weight": 15,
+          "group": "metrics"
+        },
+        {
+          "id": "time-to-interactive",
+          "weight": 10,
+          "group": "metrics"
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "These checks ensure your site is accessible to all users.",
+      "manualDescription": "These checks open in a new tab. They don't affect your score but may highlight opportunities to improve your app's accessibility.",
+      "score": 0.91,
+      "auditRefs": [
+        {
+          "id": "aria-allowed-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "aria-hidden-body",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "color-contrast",
+          "weight": 10,
+          "group": "a11y-color-contrast"
+        },
+        {
+          "id": "image-alt",
+          "weight": 10,
+          "group": "a11y-images-text"
+        }
+      ]
+    },
+    "best-practices": {
+      "title": "Best Practices",
+      "description": "We've compiled the most important issues the web should follow.",
+      "manualDescription": "These checks open in a new tab. They don't affect your score but may highlight opportunities to improve your app's compliance with web best practices.",
+      "score": 0.93,
+      "auditRefs": [
+        {
+          "id": "appcache-manifest",
+          "weight": 1,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "doctype",
+          "weight": 1,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "no-document-write",
+          "weight": 1,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "no-vulnerable-libraries",
+          "weight": 1,
+          "group": "best-practices-general"
+        }
+      ]
+    },
+    "seo": {
+      "title": "SEO",
+      "description": "These checks ensure your site is optimized for search engines.",
+      "manualDescription": "These checks open in a new tab. They don't affect your score but may highlight opportunities to improve your app's search engine optimization.",
+      "score": 0.90,
+      "auditRefs": [
+        {
+          "id": "meta-description",
+          "weight": 1,
+          "group": "seo-content"
+        },
+        {
+          "id": "http-status-code",
+          "weight": 1,
+          "group": "seo-crawl"
+        },
+        {
+          "id": "robots-txt",
+          "weight": 1,
+          "group": "seo-crawl"
+        },
+        {
+          "id": "font-size",
+          "weight": 1,
+          "group": "seo-mobile"
+        }
+      ]
+    },
+    "pwa": {
+      "title": "Progressive Web App",
+      "description": "These checks validate the aspects of a Progressive Web App.",
+      "manualDescription": "These checks open in a new tab. They don't affect your score but may highlight opportunities to improve your app's compliance with Progressive Web App best practices.",
+      "score": 0.94,
+      "auditRefs": [
+        {
+          "id": "installable-manifest",
+          "weight": 0,
+          "group": "pwa-installable"
+        },
+        {
+          "id": "offline-start-url",
+          "weight": 0,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "service-worker",
+          "weight": 0,
+          "group": "pwa-optimized"
+        },
+        {
+          "id": "themed-omnibox",
+          "weight": 0,
+          "group": "pwa-optimized"
+        }
+      ]
+    }
+  },
+  "audits": {
+    "first-contentful-paint": {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://web.dev/fcp)",
+      "score": 0.95,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 1200,
+      "numericUnit": "milliseconds",
+      "displayValue": "1.2 s"
+    },
+    "largest-contentful-paint": {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://web.dev/lcp)",
+      "score": 0.96,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 2100,
+      "numericUnit": "milliseconds",
+      "displayValue": "2.1 s"
+    },
+    "cumulative-layout-shift": {
+      "id": "cumulative-layout-shift",
+      "title": "Cumulative Layout Shift",
+      "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/cls)",
+      "score": 0.98,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 0.05,
+      "numericUnit": "unitless",
+      "displayValue": "0.05"
+    },
+    "time-to-interactive": {
+      "id": "time-to-interactive",
+      "title": "Time to Interactive",
+      "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://web.dev/tti)",
+      "score": 0.92,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 3200,
+      "numericUnit": "milliseconds",
+      "displayValue": "3.2 s"
+    },
+    "service-worker": {
+      "id": "service-worker",
+      "title": "Service worker",
+      "description": "Registering a service worker is the first step toward creating a Progressive Web App that works offline. [Learn more about service workers](https://web.dev/service-workers-cache-storage)",
+      "score": 1,
+      "scoreDisplayMode": "boolean",
+      "displayValue": "Yes"
+    },
+    "installable-manifest": {
+      "id": "installable-manifest",
+      "title": "Web app manifest meets installability requirements",
+      "description": "Your web app manifest contains the required properties to display your app as a standalone app. [Learn more about web app manifests](https://web.dev/add-manifest)",
+      "score": 1,
+      "scoreDisplayMode": "boolean",
+      "displayValue": "Manifest is installable"
+    },
+    "offline-start-url": {
+      "id": "offline-start-url",
+      "title": "Start URL doesn't respond with a 200 when offline",
+      "description": "A service worker alone isn't enough to make your app work offline. A web app manifest is also required. However, if your start URL responds with a 200 when offline, your PWA is installable. [Learn more about start URLs](https://web.dev/offline-fallback-page)",
+      "score": 1,
+      "scoreDisplayMode": "boolean",
+      "displayValue": "Yes"
+    }
+  },
+  "timing": {
+    "total": 8234
+  }
+}

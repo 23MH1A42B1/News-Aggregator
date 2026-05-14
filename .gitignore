@@ -1,0 +1,15 @@
+.next
+node_modules
+dist
+build
+*.log
+.DS_Store
+.env.local
+.env*.local
+coverage
+reports/*.json
+!reports/lighthouse.json
+!reports/.gitkeep
+public/sw.js
+public/workbox-*.js
+public/workbox-*.js.map
